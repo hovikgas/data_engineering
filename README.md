@@ -1,5 +1,5 @@
 # Overview
-Data Engineering Solution Submission for Hovanes Gasparian
+Data Engineering Solution Submission for Hovanes Gasparian. The ETL script is meant to be run as a Databricks Job using AutoLoader and Delta tables. Normally, Databricks converts its notebooks into specially formatted Python scripts for running jobs, CI/CD actions, etc. from GitHub repos.  However, those scripts only retain their readable notebook formats inside of Databricks. Thus, an actual iPython notebook was submitted for readability purposes. Otherwise, the notebook is meant to be run by a Job cluster. 
 
 ## Description of the Data
 Each entry (row) in the sample dataset gives the following features:
