@@ -1,7 +1,7 @@
 # Overview
 Data Engineering Solution Submission for Hovanes Gasparian
 
-### Description of the Data
+## Description of the Data
 Each entry (row) in the sample dataset gives the following features:
 - `time`: The time the measurement was taken.
 - `value`: The measured value corresponding to the sensor taking the reading.
@@ -12,8 +12,8 @@ Each entry (row) in the sample dataset gives the following features:
 
 Note: The encoder gives all values in millimeters and the load cell gives all values in Newtons.
 
-## 2. Dependencies
+## Dependencies
 Databricks runtime >= 11.2
 
-## 3. Instructions
+## Instructions
 See the run_instructions markdown page for integration with GitHub Actions
