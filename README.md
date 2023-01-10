@@ -1,6 +1,6 @@
 # Overview
 Data Engineering Solution Submission for Hovanes Gasparian
-```
+
 ### Description of the Data
 Each entry (row) in the sample dataset gives the following features:
 - `time`: The time the measurement was taken.
