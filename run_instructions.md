@@ -1,5 +1,3 @@
-# databricks/run-notebook v0
-
 # Overview
 Given a Databricks notebook and cluster specification, this Action runs the notebook as a one-time Databricks Job
 run (docs: 
@@ -381,14 +379,3 @@ jobs:
               }
             ]
 ```
-
-# Troubleshooting
-To enable debug logging for Databricks REST API requests (e.g. to inspect the payload of a bad `/api/2.0/jobs/runs/submit`
-Databricks REST API request), you can set the `ACTIONS_STEP_DEBUG` action secret to
-`true`.
-See [Step Debug Logs](https://github.com/actions/toolkit/blob/master/docs/action-debugging.md#how-to-access-step-debug-logs) 
-for further details.
-
-# License
-
-The scripts and documentation in this project are released under the [Apache License, Version 2.0](LICENSE).
