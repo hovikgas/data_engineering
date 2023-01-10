@@ -1,19 +1,9 @@
 # Overview
-Data Engineering Solution Submission for Hovanes Gasparian. The ETL script is meant to be run as a Databricks Job using AutoLoader and Delta tables. Normally, Databricks converts its notebooks into specially formatted Python scripts for running jobs, CI/CD actions, etc. from GitHub repos.  However, those scripts only retain their readable notebook formats inside of Databricks. Thus, an actual iPython notebook was submitted for readability purposes. Otherwise, the notebook is meant to be run by a Job cluster. 
+Data Engineering Solution Submission for Hovanes Gasparian. The ETL script is meant to be run as a Databricks Job using AutoLoader and Delta tables. Normally, Databricks converts its notebooks into specially formatted Python scripts for running jobs, CI/CD actions, etc. from GitHub repos.  However, those scripts only retain their readable notebook formats inside of Databricks. Thus, an actual iPython notebook was submitted for readability purposes. Otherwise, the notebook can be run on any workspace hosted on either AWS, Azure, or GCP, and is meant to be run by a Job cluster. As such, all dependencies are handled by the Databricks runtime, negating the need for a conventional environment.yml file. However, to demonstrate the integration with GitHub actions, an example action.yml file has been included which demonstrates the necessary parameters to integrate with either AWS, Azure, or GCP.
 
-## Description of the Data
-Each entry (row) in the sample dataset gives the following features:
-- `time`: The time the measurement was taken.
-- `value`: The measured value corresponding to the sensor taking the reading.
-- `field`: The field for the measured value. For encoders this indicates which cartesian coordinate the measurement is taken in (e.g. [`x`,`y`,`z`]) and for the `load_cell` (i.e. force measuring device) this gives the direction of the force vector in cartesian coordinates (e.g. [`fx`,`fy`,`fz`]).
-- `robot_id`: The ID number for the robot being used (i.e. there are 2 robots so the `robot_id` is either `1` or `2`).
-- `run_uuid`: A random ID number assigned to the part being formed.
-- `sensor_type`: The type of sensor reporting data (e.g. encoder = robot position / load_cell = force measurements)
+Naturally, for production workloads, actual PySpark Dataframes would be used, rather than vanilla Pandas Dataframe. Spark distributes workloads, and takes advantage of parallelization, allowing for much more seamless scaling as data grows. The vast majority of the functionality of Pandas has been translated to the Pandas API for Spark, and very trivial code changes would be needed in order to translate the Pandas syntax used for production PySpark. As such, pure Pandas was used primarily for simplicity and expedience of local development.
 
-Note: The encoder gives all values in millimeters and the load cell gives all values in Newtons.
+## Dependencies and Prerequisites
+Databricks runtime >= 11.3.x
 
-## Dependencies
-Databricks runtime >= 11.2
-
-## Instructions
-See the run_instructions markdown page for integration with GitHub Actions
+See the run instructions markdown file for more details on dependencies, as well as the prerequiquites for integration with GitHub Actions.
